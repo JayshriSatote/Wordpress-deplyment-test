@@ -1,4 +1,4 @@
-# my-wordpress
+# Wordpress-deployment test
 # deploying wordpress website using nginx reverse proxy and kubernetes
 
 ## commands usefull for deploying wordpress application
@@ -27,17 +27,11 @@ curl -O https://wordpress.org/latest.tar.gz
 
 tar xzvf latest.tar.gz
 
-4- creating docker image
+4.Automation
+-Jenkins-github ingtegration
+
+-creating docker image
  
 docker build -t <tag to be given to image> <location where dockerfile is>
-
-5- kubernetes commands:
-
-kubectl apply -f <filename>
-
-kubectl get deployments
-
-kubectl get service
  
-kubectl get pods
 
