@@ -1,5 +1,5 @@
 # Wordpress-deployment test
-# deploying wordpress website using nginx reverse proxy and kubernetes
+# deploying wordpress website using nginx reverse proxy 
 
 ## commands usefull for deploying wordpress application
 
