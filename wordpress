@@ -6,6 +6,11 @@ server {
     location / {
         autoindex off;
         try_files $uri $uri/ /index.php?$args;
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 
     location ~ \.php$ {
@@ -13,6 +18,14 @@ server {
         fastcgi_pass unix:/run/php/php8.1-fpm.sock;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param PATH_INFO $fastcgi_path_info;
+    }
+location /login {
+        # Allow access only from specific IP addresses
+        allow X.X.X.X;  # Replace with the allowed IP addresses
+        deny all;
+
+        # Other login-related configuration
+        ...
     }
 
 }
