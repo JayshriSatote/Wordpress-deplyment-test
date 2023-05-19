@@ -28,10 +28,6 @@ curl -O https://wordpress.org/latest.tar.gz
 tar xzvf latest.tar.gz
 
 4.Automation
--Jenkins-github ingtegration
 
--creating docker image
- 
-docker build -t <tag to be given to image> <location where dockerfile is>
- 
+-Jenkins-github ingtegration to fetch the code from github and using docker and kubernetes to automate deployment.
 
